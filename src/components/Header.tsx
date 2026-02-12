@@ -29,8 +29,8 @@ const navLinks = [
   {
     label: "Contact",
     children: [
-      { label: "About Us", href: "/#about" },
-      { label: "Get In Contact", href: "/#contact" },
+      { label: "About Us", href: "/about" },
+      { label: "Get In Contact", href: "/contact" },
       { label: "Review Us", href: "/review" },
       { label: "Gallery", href: "/gallery" },
     ],
