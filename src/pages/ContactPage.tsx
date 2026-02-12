@@ -1,0 +1,148 @@
+import { useEffect } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { motion } from "framer-motion";
+import { Phone, MapPin, Clock, Mail } from "lucide-react";
+import { useQuoteModal } from "@/components/QuoteModal";
+import heroServices from "@/assets/hero-services.jpg";
+
+const ContactPage = () => {
+  const { openQuoteModal } = useQuoteModal();
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://api.juniesystems.com/js/form_embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        {/* Hero */}
+        <section className="relative overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${heroServices})` }}
+          />
+          <div className="absolute inset-0 bg-black/70" />
+          <div className="container mx-auto px-4 lg:px-8 py-20 lg:py-32 relative z-10 text-center">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+              <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Get In Touch</span>
+              <h1 className="font-heading text-4xl lg:text-6xl font-bold text-primary-foreground mt-3">Contact Us</h1>
+              <p className="text-lg text-primary-foreground/70 max-w-2xl mx-auto mt-6 leading-relaxed">
+                Ready to schedule a service or have a question? We're here to help.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Content */}
+        <section className="py-16 lg:py-24">
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+              {/* Contact Info */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="space-y-8"
+              >
+                <div>
+                  <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                    Let's Talk
+                  </h2>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Whether you need an emergency repair, a new installation, or just have questions about your HVAC system — we're here for you. Reach out and we'll get back to you as quickly as possible.
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
+                      <Phone className="w-5 h-5 text-secondary" />
+                    </div>
+                    <div>
+                      <h3 className="font-heading font-semibold text-foreground mb-1">Phone</h3>
+                      <a href="tel:+19412584006" className="text-muted-foreground hover:text-secondary transition-colors">
+                        (941) 258-4006
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
+                      <MapPin className="w-5 h-5 text-secondary" />
+                    </div>
+                    <div>
+                      <h3 className="font-heading font-semibold text-foreground mb-1">Address</h3>
+                      <p className="text-muted-foreground">531 46th St W, Palmetto, FL 34221</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
+                      <Clock className="w-5 h-5 text-secondary" />
+                    </div>
+                    <div>
+                      <h3 className="font-heading font-semibold text-foreground mb-1">Hours</h3>
+                      <p className="text-muted-foreground">Open 24 hours — we're always here when you need us!</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Map embed */}
+                <div className="rounded-2xl overflow-hidden border border-border shadow-md">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.5!2d-82.58!3d27.52!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z531 46th St W, Palmetto, FL 34221!5e0!3m2!1sen!2sus!4v1"
+                    width="100%"
+                    height="250"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Emmons Air location"
+                  />
+                </div>
+              </motion.div>
+
+              {/* Quote Form */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="rounded-2xl overflow-hidden shadow-2xl border-2"
+                style={{ backgroundColor: "rgba(15, 23, 42, 0.6)", borderColor: "#3b82f6" }}
+              >
+                <iframe
+                  src="https://api.juniesystems.com/widget/form/P2loR2dW6LgPnGhKf4Px"
+                  style={{ width: "100%", height: "883px", border: "none", borderRadius: "10px" }}
+                  id="inline-contact-P2loR2dW6LgPnGhKf4Px"
+                  data-layout="{'id':'INLINE'}"
+                  data-trigger-type="alwaysShow"
+                  data-trigger-value=""
+                  data-activation-type="alwaysActivated"
+                  data-activation-value=""
+                  data-deactivation-type="neverDeactivate"
+                  data-deactivation-value=""
+                  data-form-name="Get A Quote Form"
+                  data-height="883"
+                  data-layout-iframe-id="inline-contact-P2loR2dW6LgPnGhKf4Px"
+                  data-form-id="P2loR2dW6LgPnGhKf4Px"
+                  title="Get A Quote Form"
+                />
+              </motion.div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default ContactPage;
