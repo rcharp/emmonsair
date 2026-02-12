@@ -8,7 +8,7 @@ const Footer = () => (
       <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
         {/* Brand */}
         <div className="space-y-4">
-          <img src={logo} alt="Emmons Air" className="w-[300px] h-auto" />
+          <img src={logo} alt="Emmons Air" className="w-full max-w-[300px] h-auto" />
           <div className="flex items-center gap-4 pt-2">
             <a href="https://www.facebook.com/p/Emmons-Air-LLC-61551350440167/" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity text-sm font-medium">
               Facebook
