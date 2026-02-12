@@ -15,6 +15,7 @@ import MemphisPage from "./pages/areas/MemphisPage";
 import BradentonPage from "./pages/areas/BradentonPage";
 import EllentonPage from "./pages/areas/EllentonPage";
 import PalmaSolaPage from "./pages/areas/PalmaSolaPage";
+import GalleryPage from "./pages/GalleryPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -38,6 +39,7 @@ const App = () => (
             <Route path="/areas/bradenton" element={<BradentonPage />} />
             <Route path="/areas/ellenton" element={<EllentonPage />} />
             <Route path="/areas/palma-sola" element={<PalmaSolaPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </QuoteModalProvider>

@@ -12,7 +12,7 @@ const badges = [
 const TrustBadges = () => (
   <section className="py-12 bg-card border-y border-border">
     <div className="container mx-auto px-4 lg:px-8">
-      <div className="flex flex-wrap justify-center gap-8 lg:gap-16">
+      <div className="flex justify-center gap-4 sm:gap-6 lg:gap-16">
         {badges.map((badge, i) => (
           <motion.div
             key={badge.label}
