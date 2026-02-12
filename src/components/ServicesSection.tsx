@@ -1,9 +1,9 @@
 import { ArrowRight, Check } from "lucide-react";
 import { motion } from "framer-motion";
-import heroRepair from "@/assets/hero-ac-repair.jpg";
-import heroInstall from "@/assets/hero-ac-install.jpg";
-import serviceMaintenance from "@/assets/service-maintenance.jpg";
-import serviceDuct from "@/assets/service-duct-cleaning.jpg";
+import heroRepair from "@/assets/service-repair-stock.jpg";
+import heroInstall from "@/assets/service-install-stock.jpg";
+import serviceMaintenance from "@/assets/service-maintenance-stock.jpg";
+import serviceDuct from "@/assets/service-duct-stock.jpg";
 
 const services = [
   {
