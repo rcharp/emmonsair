@@ -5,7 +5,7 @@ import icon from "@/assets/icon.png";
 const Footer = () => (
   <footer className="bg-foreground text-card py-16">
     <div className="container mx-auto px-4 lg:px-8">
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
         {/* Brand */}
         <div className="space-y-4">
           <img src={logo} alt="Emmons Air" className="w-[300px] h-auto" />
@@ -39,6 +39,18 @@ const Footer = () => (
             <a href="#services" className="block text-sm opacity-80 hover:opacity-100 transition-opacity">AC Installation</a>
             <a href="#services" className="block text-sm opacity-80 hover:opacity-100 transition-opacity">AC Maintenance</a>
             <a href="#services" className="block text-sm opacity-80 hover:opacity-100 transition-opacity">Duct Cleaning</a>
+          </nav>
+        </div>
+
+        {/* Service Areas */}
+        <div>
+          <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 opacity-60">Service Areas</h4>
+          <nav className="space-y-3">
+            <a href="/areas/palmetto" className="block text-sm opacity-80 hover:opacity-100 transition-opacity">Palmetto, FL</a>
+            <a href="/areas/bradenton" className="block text-sm opacity-80 hover:opacity-100 transition-opacity">Bradenton, FL</a>
+            <a href="/areas/memphis" className="block text-sm opacity-80 hover:opacity-100 transition-opacity">Memphis, FL</a>
+            <a href="/areas/ellenton" className="block text-sm opacity-80 hover:opacity-100 transition-opacity">Ellenton, FL</a>
+            <a href="/areas/palma-sola" className="block text-sm opacity-80 hover:opacity-100 transition-opacity">Palma Sola, FL</a>
           </nav>
         </div>
 
