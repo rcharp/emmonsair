@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import img1 from "@/assets/gallery/goodman-new-install.jpg";
-import img2 from "@/assets/gallery/emmons-family.png";
+import img2 from "@/assets/gallery/emmons-team.png";
 import img3 from "@/assets/gallery/air-handler-closet.jpg";
 import img4 from "@/assets/gallery/fleet-trucks.png";
 import img5 from "@/assets/gallery/goodman-dual-units.jpg";
@@ -53,7 +53,7 @@ const GallerySection = () => (
         className="text-center mt-12"
       >
         <Link to="/gallery">
-          <Button size="lg" className="group">
+          <Button variant="secondary" size="lg" className="group text-lg px-10 py-6 h-auto">
             View Full Gallery
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Button>
