@@ -31,18 +31,33 @@ import galleryNewInstall from "@/assets/gallery/goodman-new-install.jpg";
 import galleryTestimony from "@/assets/gallery/testimony-promo.png";
 import galleryOwnerUnits from "@/assets/gallery/owner-with-units.png";
 import galleryEventBooth from "@/assets/gallery/event-booth.png";
+import galleryOwnerThumbsup from "@/assets/gallery/owner-thumbsup.jpg";
+import galleryServiceTruck from "@/assets/gallery/service-truck.jpg";
+import galleryPalmettoTrailer from "@/assets/gallery/palmetto-point-trailer.png";
+import galleryOwnerGoodmanDisplay from "@/assets/gallery/owner-goodman-display.png";
+import galleryHorizontalHandler from "@/assets/gallery/horizontal-handler-garage.jpg";
+import galleryAmericanStandardPromo from "@/assets/gallery/american-standard-promo.png";
+import galleryAmericanStandardRoof from "@/assets/gallery/american-standard-rooftop.jpg";
+import galleryMitsubishiIndoor from "@/assets/gallery/mitsubishi-indoor.jpg";
+import galleryMitsubishiOutdoor from "@/assets/gallery/mitsubishi-outdoor.jpg";
 
 const images = [
   { src: galleryFleet, alt: "Emmons Air fleet of trucks and trailer" },
   { src: galleryOwnerUnits, alt: "Owner with Goodman AC units display" },
+  { src: galleryOwnerGoodmanDisplay, alt: "Owner with Goodman units and fans" },
   { src: galleryTrailer, alt: "Emmons Air company trailer" },
+  { src: galleryPalmettoTrailer, alt: "Emmons Air at Palmetto Point" },
+  { src: galleryServiceTruck, alt: "Emmons Air service truck" },
   { src: galleryOwner, alt: "Emmons Air owner" },
+  { src: galleryOwnerThumbsup, alt: "Owner on rooftop with commercial units" },
   { src: galleryTestimony, alt: "Customer testimonial graphic" },
   { src: galleryEventBooth, alt: "Emmons Air community event booth" },
   { src: galleryWork, alt: "Technician performing AC diagnostics" },
   { src: galleryDaikin, alt: "Daikin rooftop unit installation" },
   { src: galleryFamily, alt: "The Emmons family" },
   { src: galleryAmericanStandard, alt: "American Standard AC units" },
+  { src: galleryAmericanStandardPromo, alt: "American Standard units promotional photo" },
+  { src: galleryAmericanStandardRoof, alt: "American Standard rooftop units" },
   { src: galleryGoodmanDual, alt: "Dual Goodman condenser units" },
   { src: galleryCondenserStand, alt: "Goodman condenser on elevated stand" },
   { src: galleryGoodmanPad, alt: "Goodman unit on concrete pad" },
@@ -55,8 +70,11 @@ const images = [
   { src: galleryPackageCommercial, alt: "Commercial Goodman package unit" },
   { src: galleryMiniSplit, alt: "ACiQ mini-split outdoor unit" },
   { src: galleryGreeMini, alt: "Gree mini-split system" },
+  { src: galleryMitsubishiIndoor, alt: "Mitsubishi mini-split indoor unit" },
+  { src: galleryMitsubishiOutdoor, alt: "Mitsubishi mini-split outdoor unit" },
   { src: galleryAirHandler, alt: "Indoor air handler installation" },
   { src: galleryCeilingHandler, alt: "Ceiling-mounted air handler" },
+  { src: galleryHorizontalHandler, alt: "Horizontal air handler in garage" },
   { src: galleryAirHandler2, alt: "Air handler with ductwork" },
   { src: galleryCloset, alt: "Air handler in utility closet" },
   { src: galleryCloset2, alt: "Air handler closet installation" },
