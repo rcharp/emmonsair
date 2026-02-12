@@ -49,12 +49,12 @@ import galleryPackageTrailer from "@/assets/gallery/goodman-package-trailer.jpg"
 const images = [
   { src: galleryFleet, alt: "Emmons Air fleet of trucks and trailer" },
   { src: galleryOwnerUnits, alt: "Owner with Goodman AC units display" },
-  { src: galleryOwnerGoodmanDisplay, alt: "Owner with Goodman units and fans" },
+  { src: galleryOwnerGoodmanDisplay, alt: "Owner with Goodman units and fans", portrait: true },
   { src: galleryTrailer, alt: "Emmons Air company trailer" },
   { src: galleryPalmettoTrailer, alt: "Emmons Air at Palmetto Point" },
   { src: galleryServiceTruck, alt: "Emmons Air service truck" },
-  { src: galleryOwner, alt: "Emmons Air owner" },
-  { src: galleryOwnerThumbsup, alt: "Owner on rooftop with commercial units" },
+  { src: galleryOwner, alt: "Emmons Air owner", portrait: true },
+  { src: galleryOwnerThumbsup, alt: "Owner on rooftop with commercial units", portrait: true },
   { src: galleryTestimony, alt: "Customer testimonial graphic" },
   { src: galleryEventBooth, alt: "Emmons Air community event booth" },
   { src: galleryWork, alt: "Technician performing AC diagnostics" },
@@ -125,13 +125,13 @@ const GalleryPage = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
-                className="rounded-xl overflow-hidden aspect-[4/3] group cursor-pointer"
+                className={`rounded-xl overflow-hidden group cursor-pointer ${img.portrait ? 'aspect-[3/4]' : 'aspect-[4/3]'}`}
               >
                 <img
                   src={img.src}
                   alt={img.alt}
                   loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className={`w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ${img.portrait ? 'object-top' : ''}`}
                 />
               </motion.div>
             ))}
