@@ -23,10 +23,11 @@ const Footer = () => (
         <div>
           <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 opacity-60">Business</h4>
           <nav className="space-y-3">
-            <a href="#" className="block text-sm opacity-80 hover:opacity-100 transition-opacity">Home</a>
-            <a href="#about" className="block text-sm opacity-80 hover:opacity-100 transition-opacity">About Us</a>
-            <a href="#contact" className="block text-sm opacity-80 hover:opacity-100 transition-opacity">Contact</a>
+            <a href="/" className="block text-sm opacity-80 hover:opacity-100 transition-opacity">Home</a>
+            <a href="/#about" className="block text-sm opacity-80 hover:opacity-100 transition-opacity">About Us</a>
+            <a href="/#contact" className="block text-sm opacity-80 hover:opacity-100 transition-opacity">Contact</a>
             <a href="/review" className="block text-sm opacity-80 hover:opacity-100 transition-opacity">Review Us</a>
+            <a href="/gallery" className="block text-sm opacity-80 hover:opacity-100 transition-opacity">Gallery</a>
           </nav>
         </div>
 
