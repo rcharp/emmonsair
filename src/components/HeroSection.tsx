@@ -120,7 +120,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             id="quote-form"
             className="rounded-2xl overflow-hidden shadow-2xl border-2 w-full lg:w-[440px] lg:ml-auto"
-            style={{ backgroundColor: "rgba(15, 23, 42, 0.6)", borderColor: "#3b82f6", minHeight: "883px" }}
+            style={{ backgroundColor: "#0f172a", borderColor: "#3b82f6", minHeight: "883px" }}
           >
             <iframe
               src="https://api.juniesystems.com/widget/form/P2loR2dW6LgPnGhKf4Px"
