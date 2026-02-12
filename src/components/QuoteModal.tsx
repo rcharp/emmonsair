@@ -16,9 +16,8 @@ export const useQuoteModal = () => useContext(QuoteModalContext);
 
 export const QuoteModalProvider = ({ children }: { children: ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [iframeLoaded, setIframeLoaded] = useState(false);
 
-  const openQuoteModal = useCallback(() => { setIframeLoaded(false); setIsOpen(true); }, []);
+  const openQuoteModal = useCallback(() => setIsOpen(true), []);
   const closeQuoteModal = useCallback(() => setIsOpen(false), []);
 
   // Lock body scroll when modal is open
@@ -34,18 +33,6 @@ export const QuoteModalProvider = ({ children }: { children: ReactNode }) => {
   return (
     <QuoteModalContext.Provider value={{ openQuoteModal, closeQuoteModal }}>
       {children}
-
-      {/* Pre-loaded iframe (always mounted, hidden when modal closed) */}
-      <div className="fixed" style={{ width: 0, height: 0, overflow: "hidden", opacity: 0, pointerEvents: "none" }}>
-        <iframe
-          src="https://api.juniesystems.com/widget/form/P2loR2dW6LgPnGhKf4Px"
-          style={{ width: "500px", height: "883px", border: "none" }}
-          id="preload-P2loR2dW6LgPnGhKf4Px"
-          title="Get A Quote Form Preload"
-          onLoad={() => setIframeLoaded(true)}
-        />
-      </div>
-
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -75,31 +62,24 @@ export const QuoteModalProvider = ({ children }: { children: ReactNode }) => {
               >
                 <X className="w-5 h-5 text-foreground" />
               </button>
-              <div className="overflow-y-auto max-h-[90vh] relative" style={{ backgroundColor: "#0f172a" }}>
-                {!iframeLoaded && (
-                  <div className="flex items-center justify-center" style={{ height: "883px", backgroundColor: "#0f172a" }}>
-                    <div className="w-8 h-8 border-2 border-secondary border-t-transparent rounded-full animate-spin" />
-                  </div>
-                )}
-                {iframeLoaded && (
-                  <iframe
-                    src="https://api.juniesystems.com/widget/form/P2loR2dW6LgPnGhKf4Px"
-                    style={{ width: "100%", height: "883px", border: "none", borderRadius: "10px" }}
-                    id="modal-P2loR2dW6LgPnGhKf4Px"
-                    data-layout="{'id':'INLINE'}"
-                    data-trigger-type="alwaysShow"
-                    data-trigger-value=""
-                    data-activation-type="alwaysActivated"
-                    data-activation-value=""
-                    data-deactivation-type="neverDeactivate"
-                    data-deactivation-value=""
-                    data-form-name="Get A Quote Form"
-                    data-height="883"
-                    data-layout-iframe-id="modal-P2loR2dW6LgPnGhKf4Px"
-                    data-form-id="P2loR2dW6LgPnGhKf4Px"
-                    title="Get A Quote Form"
-                  />
-                )}
+              <div className="overflow-y-auto max-h-[90vh]" style={{ backgroundColor: "#0f172a" }}>
+                <iframe
+                  src="https://api.juniesystems.com/widget/form/P2loR2dW6LgPnGhKf4Px"
+                  style={{ width: "100%", height: "883px", border: "none", borderRadius: "10px" }}
+                  id="modal-P2loR2dW6LgPnGhKf4Px"
+                  data-layout="{'id':'INLINE'}"
+                  data-trigger-type="alwaysShow"
+                  data-trigger-value=""
+                  data-activation-type="alwaysActivated"
+                  data-activation-value=""
+                  data-deactivation-type="neverDeactivate"
+                  data-deactivation-value=""
+                  data-form-name="Get A Quote Form"
+                  data-height="883"
+                  data-layout-iframe-id="modal-P2loR2dW6LgPnGhKf4Px"
+                  data-form-id="P2loR2dW6LgPnGhKf4Px"
+                  title="Get A Quote Form"
+                />
               </div>
             </motion.div>
           </motion.div>
