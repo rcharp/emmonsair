@@ -46,8 +46,8 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-8">
         {/* Logo */}
         <a href="#" className="flex items-center gap-3">
-          <img src={icon} alt="Emmons Air icon" className="w-10 h-10" />
-          <img src={logo} alt="Emmons Air" className="h-10" />
+          <img src={icon} alt="Emmons Air icon" className="w-10 h-10 lg:hidden" />
+          <img src={logo} alt="Emmons Air" className="hidden lg:block h-14" />
         </a>
 
         {/* Desktop Nav */}
