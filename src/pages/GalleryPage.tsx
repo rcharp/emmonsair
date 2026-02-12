@@ -11,16 +11,36 @@ import galleryInstall1 from "@/assets/gallery/ac-unit-install-1.jpg";
 import galleryInstall2 from "@/assets/gallery/ac-unit-install-2.jpg";
 import galleryInstall3 from "@/assets/gallery/ac-unit-install-3.jpg";
 import galleryAirHandler from "@/assets/gallery/air-handler-install.jpg";
+import galleryFleet from "@/assets/gallery/fleet-trucks.png";
+import galleryDaikin from "@/assets/gallery/daikin-rooftop.png";
+import galleryCeilingHandler from "@/assets/gallery/ceiling-air-handler.jpg";
+import galleryOwner from "@/assets/gallery/owner-selfie.jpg";
+import galleryGoodmanDual from "@/assets/gallery/goodman-dual-units.jpg";
+import galleryAirHandler2 from "@/assets/gallery/air-handler-install-2.jpg";
+import galleryMiniSplit from "@/assets/gallery/aciq-mini-split.jpg";
+import galleryCondenserStand from "@/assets/gallery/goodman-condenser-stand.jpg";
+import galleryCloset from "@/assets/gallery/air-handler-closet.jpg";
+import galleryCloset2 from "@/assets/gallery/air-handler-closet-2.jpg";
 
 const images = [
+  { src: galleryFleet, alt: "Emmons Air fleet of trucks and trailer" },
   { src: galleryTrailer, alt: "Emmons Air company trailer" },
+  { src: galleryOwner, alt: "Emmons Air owner" },
   { src: galleryWork, alt: "Technician performing AC diagnostics" },
+  { src: galleryDaikin, alt: "Daikin rooftop unit installation" },
   { src: galleryFamily, alt: "The Emmons family" },
-  { src: galleryAmericanStandard, alt: "American Standard AC units installation" },
-  { src: galleryInstall1, alt: "Residential AC condenser unit installation" },
+  { src: galleryAmericanStandard, alt: "American Standard AC units" },
+  { src: galleryGoodmanDual, alt: "Dual Goodman condenser units" },
+  { src: galleryCondenserStand, alt: "Goodman condenser on elevated stand" },
+  { src: galleryInstall1, alt: "Residential AC condenser installation" },
   { src: galleryInstall2, alt: "Goodman package unit on stand" },
-  { src: galleryInstall3, alt: "Wall-mounted condenser unit installation" },
+  { src: galleryInstall3, alt: "Wall-mounted condenser unit" },
+  { src: galleryMiniSplit, alt: "ACiQ mini-split outdoor unit" },
   { src: galleryAirHandler, alt: "Indoor air handler installation" },
+  { src: galleryCeilingHandler, alt: "Ceiling-mounted air handler" },
+  { src: galleryAirHandler2, alt: "Air handler with ductwork" },
+  { src: galleryCloset, alt: "Air handler in utility closet" },
+  { src: galleryCloset2, alt: "Air handler closet installation" },
 ];
 
 const GalleryPage = () => (
