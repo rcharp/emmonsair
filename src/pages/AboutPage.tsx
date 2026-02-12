@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Check, Phone } from "lucide-react";
 import { useQuoteModal } from "@/components/QuoteModal";
 import familyImg from "@/assets/gallery/emmons-family.png";
-import ownerImg from "@/assets/gallery/owner-selfie.jpg";
+import ownerImg from "@/assets/gallery/daikin-rooftop.png";
 import heroServices from "@/assets/hero-services.jpg";
 
 const AboutPage = () => {
