@@ -67,5 +67,40 @@
       data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
       data-widget-id="69851d79e64c738a937c628d"
     ></script>
+    <script>
+      // Auto-hide chat widget popup bubble after 5 seconds
+      (function() {
+        var observer = new MutationObserver(function(mutations) {
+          var popup = document.querySelector('[class*="chat-widget"] [class*="bubble-message"], .lc_text_bubble, [id*="chat-widget"] [class*="message"], [class*="ChatWidgetBubble"]');
+          if (!popup) {
+            // Try broader selector for GHL chat popup
+            document.querySelectorAll('iframe').forEach(function(iframe) {
+              if (iframe.src && iframe.src.includes('leadconnector')) {
+                var parent = iframe.parentElement;
+                if (parent) {
+                  var bubbles = parent.querySelectorAll('div');
+                  bubbles.forEach(function(el) {
+                    if (el.textContent && el.textContent.includes('Shoot me any questions')) {
+                      popup = el;
+                    }
+                  });
+                }
+              }
+            });
+          }
+          if (popup && !popup.dataset.fadeScheduled) {
+            popup.dataset.fadeScheduled = 'true';
+            popup.style.transition = 'opacity 1s ease';
+            setTimeout(function() {
+              popup.style.opacity = '0';
+              setTimeout(function() { popup.style.display = 'none'; }, 1000);
+            }, 5000);
+          }
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+        // Stop observing after 30s to avoid performance impact
+        setTimeout(function() { observer.disconnect(); }, 30000);
+      })();
+    </script>
   </body>
 </html>
