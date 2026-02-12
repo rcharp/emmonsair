@@ -109,16 +109,14 @@ const Header = () => {
             style={{ borderRadius: "10px" }}
           >
             <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 shrink-0" />
-            <span className="hidden sm:inline">(941) 258-4006</span>
-            <span className="sm:hidden">Call Now</span>
+            (941) 258-4006
           </a>
           <button
             onClick={openQuoteModal}
             className="px-2 sm:px-3 lg:px-6 py-1.5 sm:py-2 lg:py-3 text-xs sm:text-sm lg:text-base font-semibold hover:opacity-90 transition-opacity whitespace-nowrap"
             style={{ backgroundColor: "#f59e0b", color: "#fff", borderRadius: "10px" }}
           >
-            <span className="hidden sm:inline">Get Free Quote</span>
-            <span className="sm:hidden">Quote</span>
+            Get Free Quote
           </button>
 
           {/* Mobile Toggle */}
