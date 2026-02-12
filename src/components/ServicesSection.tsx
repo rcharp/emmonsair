@@ -1,13 +1,12 @@
 import { ArrowRight, Check } from "lucide-react";
 import { motion } from "framer-motion";
-import heroRepair from "@/assets/hero-ac-repair.jpg";
-import heroInstall from "@/assets/hero-ac-install.jpg";
+import heroServices from "@/assets/hero-services.jpg";
 import serviceMaintenance from "@/assets/service-maintenance.jpg";
 import serviceDuct from "@/assets/service-duct-cleaning.jpg";
 
 const services = [
   {
-    image: heroRepair,
+    image: heroServices,
     title: "AC Repair",
     features: [
       "Fast response for quick repairs",
@@ -17,7 +16,7 @@ const services = [
     ],
   },
   {
-    image: heroInstall,
+    image: heroServices,
     title: "AC Installation",
     features: [
       "Residential AC Installation",

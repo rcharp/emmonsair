@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useQuoteModal } from "./QuoteModal";
+import logo from "@/assets/logo.png";
+import icon from "@/assets/icon.png";
 
 const navLinks = [
   { label: "Home", href: "#" },
@@ -44,13 +46,8 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-8">
         {/* Logo */}
         <a href="#" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
-            <span className="text-secondary-foreground font-heading font-bold text-lg">E</span>
-          </div>
-          <div className="flex flex-col">
-            <span className="font-heading font-bold text-lg leading-tight text-primary-foreground">Emmons Air</span>
-            <span className="text-xs text-primary-foreground/60 leading-tight">Heating & Cooling</span>
-          </div>
+          <img src={icon} alt="Emmons Air icon" className="w-10 h-10" />
+          <img src={logo} alt="Emmons Air" className="h-10" />
         </a>
 
         {/* Desktop Nav */}
@@ -106,7 +103,7 @@ const Header = () => {
         <div className="hidden lg:flex items-center gap-3">
           <a
             href="tel:+19412584006"
-            className="flex items-center gap-2 px-5 py-2.5 text-base font-semibold text-primary-foreground border border-secondary rounded-full hover:bg-secondary/10 transition-colors"
+            className="flex items-center gap-2 px-5 py-2.5 text-base font-semibold text-secondary border border-secondary rounded-full hover:bg-secondary/10 transition-colors"
           >
             <Phone className="w-5 h-5" />
             (941) 258-4006

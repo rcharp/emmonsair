@@ -1,4 +1,6 @@
 import { Phone, MapPin, Clock } from "lucide-react";
+import logo from "@/assets/logo.png";
+import icon from "@/assets/icon.png";
 
 const Footer = () => (
   <footer className="bg-foreground text-card py-16">
@@ -7,13 +9,8 @@ const Footer = () => (
         {/* Brand */}
         <div className="space-y-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-heading font-bold text-lg">E</span>
-            </div>
-            <div>
-              <div className="font-heading font-bold text-lg">Emmons Air</div>
-              <div className="text-xs opacity-60">Heating & Cooling</div>
-            </div>
+            <img src={icon} alt="Emmons Air icon" className="w-10 h-10" />
+            <img src={logo} alt="Emmons Air" className="h-10" />
           </div>
           <div className="flex items-center gap-4 pt-2">
             <a href="https://www.facebook.com/p/Emmons-Air-LLC-61551350440167/" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity text-sm font-medium">
