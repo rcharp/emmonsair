@@ -2,13 +2,14 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroHvac from "@/assets/hero-hvac.jpg";
-import heroRepair from "@/assets/hero-ac-repair.jpg";
-import heroInstall from "@/assets/hero-ac-install.jpg";
-import serviceMaintenance from "@/assets/service-maintenance.jpg";
-import serviceDuct from "@/assets/service-duct-cleaning.jpg";
+import img1 from "@/assets/gallery/goodman-new-install.jpg";
+import img2 from "@/assets/gallery/emmons-family.png";
+import img3 from "@/assets/gallery/air-handler-closet.jpg";
+import img4 from "@/assets/gallery/fleet-trucks.png";
+import img5 from "@/assets/gallery/goodman-dual-units.jpg";
+import img6 from "@/assets/gallery/owner-with-units.png";
 
-const images = [heroHvac, heroRepair, heroInstall, serviceMaintenance, serviceDuct, heroHvac];
+const images = [img1, img2, img3, img4, img5, img6];
 
 const GallerySection = () => (
   <section className="py-20 lg:py-28 section-gradient">
