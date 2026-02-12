@@ -52,7 +52,8 @@ export const QuoteModalProvider = ({ children }: { children: ReactNode }) => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.2 }}
-              className="relative bg-card rounded-2xl border border-border shadow-2xl w-full max-w-lg max-h-[90vh] overflow-hidden"
+              className="relative rounded-2xl border-2 border-secondary shadow-2xl w-full max-w-lg max-h-[90vh] overflow-hidden"
+              style={{ backgroundColor: "#0f172a" }}
             >
               <button
                 onClick={closeQuoteModal}
