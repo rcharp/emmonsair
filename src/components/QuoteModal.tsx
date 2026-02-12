@@ -16,8 +16,9 @@ export const useQuoteModal = () => useContext(QuoteModalContext);
 
 export const QuoteModalProvider = ({ children }: { children: ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [iframeLoaded, setIframeLoaded] = useState(false);
 
-  const openQuoteModal = useCallback(() => setIsOpen(true), []);
+  const openQuoteModal = useCallback(() => { setIframeLoaded(false); setIsOpen(true); }, []);
   const closeQuoteModal = useCallback(() => setIsOpen(false), []);
 
   // Lock body scroll when modal is open
@@ -61,10 +62,16 @@ export const QuoteModalProvider = ({ children }: { children: ReactNode }) => {
               >
                 <X className="w-5 h-5 text-foreground" />
               </button>
-              <div className="overflow-y-auto max-h-[90vh]">
+              <div className="overflow-y-auto max-h-[90vh] relative">
+                {!iframeLoaded && (
+                  <div className="absolute inset-0 flex items-center justify-center" style={{ backgroundColor: "#0f172a" }}>
+                    <div className="w-8 h-8 border-3 border-secondary border-t-transparent rounded-full animate-spin" />
+                  </div>
+                )}
                 <iframe
                   src="https://api.juniesystems.com/widget/form/P2loR2dW6LgPnGhKf4Px"
-                  style={{ width: "100%", height: "883px", border: "none", borderRadius: "10px" }}
+                  style={{ width: "100%", height: "883px", border: "none", borderRadius: "10px", opacity: iframeLoaded ? 1 : 0, transition: "opacity 0.3s ease" }}
+                  onLoad={() => setIframeLoaded(true)}
                   id="modal-P2loR2dW6LgPnGhKf4Px"
                   data-layout="{'id':'INLINE'}"
                   data-trigger-type="alwaysShow"
