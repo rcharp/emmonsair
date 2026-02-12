@@ -171,7 +171,7 @@ img[src] {
 /* Smooth iframe fade-in */
 .quote-iframe-fade {
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.3s ease;
 }
 
 .quote-iframe-fade.loaded {
