@@ -102,7 +102,7 @@ const Header = () => {
         </nav>
 
         {/* CTA - always visible */}
-        <div className="flex items-center gap-1.5 lg:gap-3 ml-auto">
+        <div className="flex items-center justify-center lg:justify-end gap-1.5 lg:gap-3 flex-1 lg:flex-none">
           <a
             href="tel:+19412584006"
             className="flex items-center gap-1.5 lg:gap-2 px-3 lg:px-6 py-2 lg:py-3 text-sm lg:text-base font-semibold text-secondary border border-secondary hover:bg-secondary/10 transition-colors whitespace-nowrap"
