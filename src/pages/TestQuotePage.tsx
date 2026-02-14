@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import heroServices from "@/assets/hero-services.jpg";
 import useSEO from "@/hooks/useSEO";
+import icon from "@/assets/icon.png";
 
 const WEBHOOK_URL =
   "https://services.leadconnectorhq.com/hooks/7IdpxAjxnevjhuMotlbS/webhook-trigger/15fdedb0-33ba-4fd1-97d7-bbaaf08d87ed";
@@ -115,6 +116,12 @@ const TestQuotePage = () => {
               className="rounded-2xl border-2 p-8 space-y-6 shadow-2xl"
               style={{ backgroundColor: "#0f172a", borderColor: "#3b82f6" }}
             >
+              {/* Header */}
+              <div className="text-center space-y-3 pb-2">
+                <img src={icon} alt="Emmons Air" className="w-16 h-16 mx-auto" />
+                <h2 className="font-heading text-2xl font-bold text-white">Get a Free Quote</h2>
+              </div>
+
               {/* Full Name */}
               <div className="space-y-2">
                 <Label htmlFor="fullName" className="text-white font-semibold">
