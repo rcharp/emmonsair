@@ -32,8 +32,16 @@ const QuoteForm = ({ showHeader = true, className = "", style }: QuoteFormProps)
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.fullName.trim() || !formData.helpWith.trim()) {
+    if (!formData.fullName.trim() || !formData.phone.trim() || !formData.helpWith.trim()) {
       toast.error("Please fill in all required fields.");
+      return;
+    }
+    if (formData.phone.length < 10) {
+      toast.error("Please enter a valid 10-digit phone number.");
+      return;
+    }
+    if (!formData.consentMarketing || !formData.consentNonMarketing) {
+      toast.error("Please accept both consent checkboxes.");
       return;
     }
 
@@ -105,7 +113,7 @@ const QuoteForm = ({ showHeader = true, className = "", style }: QuoteFormProps)
       {/* Phone */}
       <div className="space-y-2">
         <Label htmlFor="phone" className="text-white font-semibold">
-          Phone
+          Phone <span className="text-secondary">*</span>
         </Label>
         <Input
           id="phone"
