@@ -19,7 +19,9 @@ import GalleryPage from "./pages/GalleryPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import QuotePage from "./pages/QuotePage";
+import TestQuotePage from "./pages/TestQuotePage";
 import NotFound from "./pages/NotFound";
+
 
 const queryClient = new QueryClient();
 
@@ -33,6 +35,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/quote" element={<QuotePage />} />
+            <Route path="/testquote" element={<TestQuotePage />} />
             <Route path="/review" element={<ReviewPage />} />
             <Route path="/services/ac-repair" element={<ACRepairPage />} />
             <Route path="/services/ac-installation" element={<ACInstallationPage />} />
