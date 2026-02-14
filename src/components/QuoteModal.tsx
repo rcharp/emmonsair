@@ -1,5 +1,5 @@
-import { createContext, useContext, useState, useCallback, useEffect, ReactNode } from "react";
-import { X } from "lucide-react";
+import { createContext, useContext, useState, useCallback, useEffect, useRef, ReactNode } from "react";
+import { X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import QuoteForm from "./QuoteForm";
 
@@ -17,8 +17,13 @@ export const useQuoteModal = () => useContext(QuoteModalContext);
 
 export const QuoteModalProvider = ({ children }: { children: ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAtBottom, setIsAtBottom] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  const openQuoteModal = useCallback(() => setIsOpen(true), []);
+  const openQuoteModal = useCallback(() => {
+    setIsOpen(true);
+    setIsAtBottom(false);
+  }, []);
   const closeQuoteModal = useCallback(() => setIsOpen(false), []);
 
   // Lock body scroll when modal is open
@@ -29,6 +34,26 @@ export const QuoteModalProvider = ({ children }: { children: ReactNode }) => {
       document.body.style.overflow = "";
     }
     return () => { document.body.style.overflow = ""; };
+  }, [isOpen]);
+
+  const handleScroll = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const atBottom = el.scrollHeight - el.scrollTop - el.clientHeight < 20;
+    setIsAtBottom(atBottom);
+  }, []);
+
+  // Check on open if content is already fully visible (no scroll needed)
+  useEffect(() => {
+    if (isOpen) {
+      requestAnimationFrame(() => {
+        const el = scrollRef.current;
+        if (!el) return;
+        if (el.scrollHeight <= el.clientHeight + 20) {
+          setIsAtBottom(true);
+        }
+      });
+    }
   }, [isOpen]);
 
   return (
@@ -65,7 +90,7 @@ export const QuoteModalProvider = ({ children }: { children: ReactNode }) => {
           style={{ pointerEvents: isOpen ? "auto" : "none" }}
         >
           <div
-className="relative w-full max-w-lg max-h-[85dvh] overflow-hidden flex flex-col"
+            className="relative w-full max-w-lg max-h-[85dvh] overflow-hidden flex flex-col"
             onClick={(e) => e.stopPropagation()}
             style={{
               transform: isOpen ? "scale(1)" : "scale(0.95)",
@@ -81,9 +106,25 @@ className="relative w-full max-w-lg max-h-[85dvh] overflow-hidden flex flex-col"
                 <X className="w-5 h-5 text-foreground" />
               </button>
             )}
-            <div className="flex-1 overflow-y-auto overscroll-contain flex flex-col">
+            <div
+              ref={scrollRef}
+              onScroll={handleScroll}
+              className="flex-1 overflow-y-auto overscroll-contain flex flex-col"
+            >
               <QuoteForm compact className="flex-1 flex flex-col justify-between" />
             </div>
+
+            {/* Scroll indicator - mobile only, hidden when at bottom */}
+            {isOpen && !isAtBottom && (
+              <div className="lg:hidden absolute bottom-2 left-0 right-0 flex justify-center pointer-events-none">
+                <motion.div
+                  animate={{ y: [0, 6, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <ChevronDown className="w-7 h-7 text-white/60" />
+                </motion.div>
+              </div>
+            )}
           </div>
         </div>
       </div>
