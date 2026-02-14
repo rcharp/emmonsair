@@ -35,7 +35,7 @@ const HeroSection = () => {
                 Comfort You Can{" "}
                 <span className="text-secondary-color">Count On.</span>
                 <br />
-                <span className="block mt-3 lg:mt-0">Service You Can{" "}
+                <span className="block mt-5 lg:mt-0">Service You Can{" "}
                 <span className="text-secondary-color">Trust.</span></span>
               </h1>
             </motion.div>
