@@ -70,22 +70,31 @@
       data-widget-id="69851d79e64c738a937c628d"
     ></script>
     <script>
-      // Auto-hide chat widget popup bubble: show on load, fade out after 5s
-      setTimeout(function() {
+      // Auto-hide chat widget popup bubble on timeout or scroll
+      function hideChatBubble() {
+        if (window.__chatBubbleHidden) return;
         var allEls = document.querySelectorAll('*');
         allEls.forEach(function(el) {
           if (el.textContent && el.textContent.trim().indexOf('Shoot me any questions') === 0 && el.children.length < 5) {
             var bubble = el.closest('[class*="bubble"], [class*="popup"], [class*="message"]') || el.parentElement;
             if (bubble) {
-              bubble.style.transition = 'opacity 1s ease';
+              bubble.style.transition = 'opacity 0.5s ease';
               setTimeout(function() {
                 bubble.style.opacity = '0';
-                setTimeout(function() { bubble.style.display = 'none'; }, 1000);
-              }, 100);
+                setTimeout(function() { bubble.style.display = 'none'; }, 500);
+              }, 50);
+              window.__chatBubbleHidden = true;
             }
           }
         });
-      }, 5000);
+      }
+      // Fade out after 5s
+      setTimeout(hideChatBubble, 5000);
+      // Fade out on first scroll
+      window.addEventListener('scroll', function onScroll() {
+        hideChatBubble();
+        window.removeEventListener('scroll', onScroll);
+      });
     </script>
   </body>
 </html>
