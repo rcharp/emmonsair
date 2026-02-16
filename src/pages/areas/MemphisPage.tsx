@@ -4,7 +4,7 @@ import useSEO from "@/hooks/useSEO";
 const MemphisPage = () => {
   useSEO({
     title: "HVAC Services Memphis FL | AC Repair & Install | Emmons Air",
-    description: "Reliable HVAC services in Memphis FL. AC repair, installation, maintenance & duct cleaning. Family owned, licensed & insured. Call (941) 258-4006.",
+    description: "Reliable HVAC services in Memphis FL. AC repair, installation, maintenance & duct cleaning. Family owned, licensed & insured. Call 1-844-520-1313.",
     canonical: "https://emmonsair.com/areas/memphis",
   });
 

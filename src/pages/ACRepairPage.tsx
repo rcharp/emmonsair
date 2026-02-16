@@ -4,7 +4,7 @@ import useSEO from "@/hooks/useSEO";
 const ACRepairPage = () => {
   useSEO({
     title: "AC Repair Palmetto FL | Same-Day Service | Emmons Air",
-    description: "Fast, reliable AC repair in Palmetto, Bradenton & Manatee County. 24/7 emergency service, upfront pricing. Licensed & insured. Call (941) 258-4006.",
+    description: "Fast, reliable AC repair in Palmetto, Bradenton & Manatee County. 24/7 emergency service, upfront pricing. Licensed & insured. Call 1-844-520-1313.",
     canonical: "https://emmonsair.com/services/ac-repair",
   });
 

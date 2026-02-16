@@ -4,7 +4,7 @@ import useSEO from "@/hooks/useSEO";
 const PalmettoPage = () => {
   useSEO({
     title: "HVAC Services Palmetto FL | AC Repair & Install | Emmons Air",
-    description: "Trusted HVAC services in Palmetto FL. AC repair, installation, maintenance & duct cleaning. Family owned, licensed & insured. Call (941) 258-4006.",
+    description: "Trusted HVAC services in Palmetto FL. AC repair, installation, maintenance & duct cleaning. Family owned, licensed & insured. Call 1-844-520-1313.",
     canonical: "https://emmonsair.com/areas/palmetto",
   });
 
