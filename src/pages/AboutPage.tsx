@@ -14,7 +14,7 @@ const AboutPage = () => {
 
   useSEO({
     title: "About Emmons Air | Family-Owned HVAC Palmetto FL",
-    description: "Meet David Emmons — over 12 years of HVAC experience serving Palmetto, Bradenton & Manatee County. Family-owned, licensed & insured. Call (941) 773-4642.",
+    description: "Meet David Emmons — over 12 years of HVAC experience serving Palmetto, Bradenton & Manatee County. Family-owned, licensed & insured. Call (844) 520-1313.",
     canonical: "https://emmonsair.com/about",
   });
 

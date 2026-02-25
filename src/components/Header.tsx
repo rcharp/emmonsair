@@ -105,12 +105,12 @@ const Header = () => {
         <div className="flex items-center flex-1 lg:flex-none min-w-0">
           <div className="flex items-center justify-center gap-3 flex-1 lg:flex-none lg:justify-end">
             <a
-              href="tel:+19417734642"
+              href="tel:+18445201313"
               className="flex items-center gap-1 sm:gap-1.5 lg:gap-2 px-2 sm:px-3 lg:px-6 py-2.5 sm:py-2.5 lg:py-3 text-xs sm:text-sm lg:text-base font-semibold text-secondary border border-secondary hover:bg-secondary/10 transition-colors whitespace-nowrap"
               style={{ borderRadius: "10px" }}
             >
               <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 shrink-0" />
-              (941) 773-4642
+              (844) 520-1313
             </a>
             <button
               onClick={openQuoteModal}
@@ -192,11 +192,11 @@ const Header = () => {
               )}
               <div className="pt-4 space-y-3 border-t border-secondary/20">
                 <a
-                  href="tel:+19417734642"
+                  href="tel:+18445201313"
                   className="flex items-center justify-center gap-2 w-full text-center px-6 py-3 text-sm font-semibold border border-secondary text-secondary"
                   style={{ borderRadius: "10px" }}
                 >
-                  <Phone className="w-5 h-5" /> (941) 773-4642
+                  <Phone className="w-5 h-5" /> (844) 520-1313
                 </a>
                 <button
                   onClick={() => { setMobileOpen(false); openQuoteModal(); }}

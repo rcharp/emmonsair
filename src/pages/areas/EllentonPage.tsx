@@ -4,7 +4,7 @@ import useSEO from "@/hooks/useSEO";
 const EllentonPage = () => {
   useSEO({
     title: "HVAC Services Ellenton FL | AC Repair & Install | Emmons Air",
-    description: "Expert HVAC services in Ellenton FL. AC repair, installation, maintenance & duct cleaning. Family owned, licensed & insured. Call (941) 773-4642.",
+    description: "Expert HVAC services in Ellenton FL. AC repair, installation, maintenance & duct cleaning. Family owned, licensed & insured. Call (844) 520-1313.",
     canonical: "https://emmonsair.com/areas/ellenton",
   });
 

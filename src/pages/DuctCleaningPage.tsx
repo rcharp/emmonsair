@@ -4,7 +4,7 @@ import useSEO from "@/hooks/useSEO";
 const DuctCleaningPage = () => {
   useSEO({
     title: "Duct Cleaning Palmetto FL | Air Quality | Emmons Air",
-    description: "Professional duct cleaning in Palmetto & Bradenton. Remove dust, allergens & mold for healthier indoor air. Licensed & insured. Call (941) 773-4642.",
+    description: "Professional duct cleaning in Palmetto & Bradenton. Remove dust, allergens & mold for healthier indoor air. Licensed & insured. Call (844) 520-1313.",
     canonical: "https://emmonsair.com/services/duct-cleaning",
   });
 

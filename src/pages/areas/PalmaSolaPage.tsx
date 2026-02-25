@@ -4,7 +4,7 @@ import useSEO from "@/hooks/useSEO";
 const PalmaSolaPage = () => {
   useSEO({
     title: "HVAC Services Palma Sola FL | AC Repair & Install | Emmons Air",
-    description: "Professional HVAC services in Palma Sola FL. AC repair, installation, maintenance & duct cleaning. Family owned, licensed & insured. Call (941) 773-4642.",
+    description: "Professional HVAC services in Palma Sola FL. AC repair, installation, maintenance & duct cleaning. Family owned, licensed & insured. Call (844) 520-1313.",
     canonical: "https://emmonsair.com/areas/palma-sola",
   });
 

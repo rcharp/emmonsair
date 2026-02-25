@@ -4,7 +4,7 @@ import useSEO from "@/hooks/useSEO";
 const ACInstallationPage = () => {
   useSEO({
     title: "AC Installation Palmetto FL | New System Install | Emmons Air",
-    description: "Professional AC installation in Palmetto & Bradenton. Energy-efficient systems, upfront pricing, manufacturer warranties. Call Emmons Air at (941) 773-4642.",
+    description: "Professional AC installation in Palmetto & Bradenton. Energy-efficient systems, upfront pricing, manufacturer warranties. Call Emmons Air at (844) 520-1313.",
     canonical: "https://emmonsair.com/services/ac-installation",
   });
 

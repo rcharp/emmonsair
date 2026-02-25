@@ -8,8 +8,8 @@ import useSEO from "@/hooks/useSEO";
 
 const ContactPage = () => {
   useSEO({
-    title: "Contact Emmons Air | Get a Free Quote | (941) 773-4642",
-    description: "Contact Emmons Air for HVAC service in Palmetto & Bradenton. Get a free quote, schedule service, or call (941) 773-4642. Open 24/7.",
+    title: "Contact Emmons Air | Get a Free Quote | (844) 520-1313",
+    description: "Contact Emmons Air for HVAC service in Palmetto & Bradenton. Get a free quote, schedule service, or call (844) 520-1313. Open 24/7.",
     canonical: "https://emmonsair.com/contact",
   });
 
@@ -64,8 +64,8 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="font-heading font-semibold text-foreground mb-1">Phone</h3>
-                      <a href="tel:+19417734642" className="text-muted-foreground hover:text-secondary transition-colors">
-                        (941) 773-4642
+                      <a href="tel:+18445201313" className="text-muted-foreground hover:text-secondary transition-colors">
+                        (844) 520-1313
                       </a>
                     </div>
                   </div>
