@@ -1,4 +1,4 @@
-import { MapPin, Phone } from "lucide-react";
+import { MapPin, Phone, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const AboutSection = () => (
@@ -41,8 +41,11 @@ const AboutSection = () => (
                   (844) 520-1313
                 </a>
               </div>
-            </div>
+           </div>
           </div>
+          <a href="/about" className="inline-flex items-center gap-2 text-secondary font-semibold hover:gap-3 transition-all mt-2">
+            Learn More About Us <ArrowRight className="w-4 h-4" />
+          </a>
         </motion.div>
 
         <motion.div

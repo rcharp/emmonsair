@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import { motion } from "framer-motion";
-import { Check, Phone } from "lucide-react";
+import { Check, Phone, ArrowRight, MapPin } from "lucide-react";
 import { useQuoteModal } from "@/components/QuoteModal";
 import familyImg from "@/assets/gallery/emmons-family.png";
 import ownerImg from "@/assets/gallery/daikin-rooftop.png";
@@ -121,6 +121,53 @@ const AboutPage = () => {
                   className="rounded-2xl shadow-xl w-full object-cover aspect-[4/3]"
                 />
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Services & Areas Links */}
+        <section className="py-16 lg:py-20">
+          <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
+            <div className="grid md:grid-cols-2 gap-12">
+              <div>
+                <h2 className="font-heading text-2xl font-bold text-foreground mb-4">Our Services</h2>
+                <p className="text-muted-foreground mb-6">We offer comprehensive HVAC solutions for homes across Manatee County.</p>
+                <ul className="space-y-3">
+                  {[
+                    { label: "AC Repair — fast, same-day service", href: "/services/ac-repair" },
+                    { label: "AC Installation — energy-efficient systems", href: "/services/ac-installation" },
+                    { label: "AC Maintenance — prevent costly breakdowns", href: "/services/ac-maintenance" },
+                    { label: "Duct Cleaning — improve air quality", href: "/services/duct-cleaning" },
+                  ].map((s) => (
+                    <li key={s.href}>
+                      <a href={s.href} className="flex items-center gap-2 text-muted-foreground hover:text-secondary transition-colors">
+                        <ArrowRight className="w-4 h-4 text-secondary shrink-0" />
+                        {s.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h2 className="font-heading text-2xl font-bold text-foreground mb-4">Areas We Serve</h2>
+                <p className="text-muted-foreground mb-6">Proudly serving these communities and beyond. <a href="/contact" className="text-secondary hover:underline">Contact us</a> to see if we cover your area.</p>
+                <ul className="space-y-3">
+                  {[
+                    { label: "Palmetto, FL", href: "/areas/palmetto" },
+                    { label: "Bradenton, FL", href: "/areas/bradenton" },
+                    { label: "Memphis, FL", href: "/areas/memphis" },
+                    { label: "Ellenton, FL", href: "/areas/ellenton" },
+                    { label: "Palma Sola, FL", href: "/areas/palma-sola" },
+                  ].map((a) => (
+                    <li key={a.href}>
+                      <a href={a.href} className="flex items-center gap-2 text-muted-foreground hover:text-secondary transition-colors">
+                        <MapPin className="w-4 h-4 text-secondary shrink-0" />
+                        {a.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </section>

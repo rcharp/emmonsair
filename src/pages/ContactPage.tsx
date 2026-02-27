@@ -53,7 +53,7 @@ const ContactPage = () => {
                     Let's Talk
                   </h2>
                   <p className="text-muted-foreground leading-relaxed">
-                    Whether you need an emergency repair, a new installation, or just have questions about your HVAC system — we're here for you. Reach out and we'll get back to you as quickly as possible.
+                    Whether you need an <a href="/services/ac-repair" className="text-secondary hover:underline">emergency repair</a>, a <a href="/services/ac-installation" className="text-secondary hover:underline">new installation</a>, or just have questions about your HVAC system — we're here for you. We also offer <a href="/services/ac-maintenance" className="text-secondary hover:underline">routine maintenance</a> and <a href="/services/duct-cleaning" className="text-secondary hover:underline">duct cleaning</a>. Reach out and we'll get back to you as quickly as possible.
                   </p>
                 </div>
 

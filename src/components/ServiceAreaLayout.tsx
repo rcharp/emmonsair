@@ -144,6 +144,15 @@ const ServiceAreaPage = ({ city, tagline, intro }: ServiceAreaPageProps) => {
           </div>
         </section>
 
+        {/* About Link */}
+        <section className="py-12 lg:py-16 border-t border-border">
+          <div className="container mx-auto px-4 lg:px-8 max-w-4xl text-center">
+            <p className="text-muted-foreground text-lg">
+              Want to know who's coming to your home? <a href="/about" className="text-secondary font-semibold hover:underline">Meet the Emmons Air team</a> — family-owned and locally operated since 2012. You can also <a href="/gallery" className="text-secondary font-semibold hover:underline">browse our work gallery</a> to see recent projects.
+            </p>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="py-16 relative overflow-hidden" style={{ backgroundColor: "#0f172a" }}>
           <div className="container mx-auto px-4 lg:px-8 text-center">
@@ -151,7 +160,7 @@ const ServiceAreaPage = ({ city, tagline, intro }: ServiceAreaPageProps) => {
               Need HVAC Service in {city}?
             </h2>
             <p className="text-primary-foreground/70 mb-8 max-w-xl mx-auto">
-              Contact Emmons Air today. We're your trusted local HVAC experts serving {city} and surrounding areas.
+              <a href="/contact" className="text-secondary hover:underline">Contact Emmons Air</a> today. We're your trusted local HVAC experts serving {city} and surrounding areas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
