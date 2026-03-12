@@ -62,6 +62,19 @@
   <meta name="twitter:title" content="Emmons Air | HVAC Services Palmetto FL">
   <meta property="og:description" content="Emmons Air provides expert AC repair, installation, maintenance and duct cleaning in Palmetto, Bradenton &amp; Manatee County. Family owned since 2012. Call (941) 773-4642.">
   <meta name="twitter:description" content="Emmons Air provides expert AC repair, installation, maintenance and duct cleaning in Palmetto, Bradenton &amp; Manatee County. Family owned since 2012. Call (941) 773-4642.">
+  <script type="text/javascript">
+    // SPA redirect handler for GitHub Pages 404.html
+    (function(l) {
+      if (l.search[1] === '/') {
+        var decoded = l.search.slice(1).split('&').map(function(s) {
+          return s.replace(/~and~/g, '&')
+        }).join('?');
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location))
+  </script>
 </head>
 
   <body>
