@@ -6,7 +6,7 @@ import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: process.env.GITHUB_PAGES === 'true' ? "/emmonsair/" : "/",
+  base: "/",
   server: {
     host: "::",
     port: 8080,
