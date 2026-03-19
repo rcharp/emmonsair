@@ -43,7 +43,7 @@ const ReviewPage = () => {
   const handleRatingClick = (stars: number) => {
     setSelectedRating(stars);
     if (stars >= 4) {
-      window.open(GMB_LINK, "_blank", "noopener,noreferrer");
+      window.location.href = GMB_LINK;
     } else {
       setStep("form");
     }
