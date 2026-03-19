@@ -125,41 +125,37 @@ const ReviewPage = () => {
             </div>
           </div>
 
-          {/* Redirect to Google Step */}
-          <div
-            className={`transition-all duration-500 ${
-              step === "redirect"
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-4 hidden"
-            }`}
-          >
-            <div className="text-center py-8">
-              <img src={icon} alt="Emmons Air" className="w-16 h-16 mx-auto mb-6" />
-              <h2 className="font-heading text-3xl font-bold text-foreground mb-3">
-                Thank you! 🎉
-              </h2>
-              <p className="text-muted-foreground text-lg mb-8 max-w-md mx-auto">
-                We're so glad you had a great experience! Would you mind leaving us a review on Google? It really helps!
-              </p>
-              <a
-                href={GMB_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block"
-              >
-                <Button className="rounded-xl py-6 px-8 text-lg font-bold">
-                  Leave a Google Review
-                </Button>
-              </a>
-              <button
-                type="button"
-                onClick={() => setStep("rating")}
-                className="block w-full text-center text-sm text-muted-foreground hover:text-foreground transition-colors mt-4"
-              >
-                ← Back to ratings
-              </button>
+          {/* Google Review Dialog */}
+          {showGoogleDialog && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+              <div className="bg-card rounded-2xl border border-border shadow-2xl p-8 max-w-md w-full animate-in fade-in zoom-in-95 duration-200">
+                <h3 className="font-heading text-xl font-bold text-foreground mb-2">
+                  Thank you for your {selectedRating}-star rating! ⭐
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  We're so glad you had a great experience! You'll be redirected to Google to leave your review — it only takes a moment and means the world to us.
+                </p>
+                <div className="flex items-center gap-3 justify-end">
+                  <Button
+                    variant="outline"
+                    onClick={() => setShowGoogleDialog(false)}
+                    className="rounded-xl"
+                  >
+                    Cancel
+                  </Button>
+                  <a
+                    href={GMB_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="rounded-xl font-bold gap-2">
+                      Leave a Google Review <ExternalLink className="w-4 h-4" />
+                    </Button>
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Feedback Form Step */}
           <div
