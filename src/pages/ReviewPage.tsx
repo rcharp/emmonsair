@@ -31,8 +31,9 @@ const ReviewPage = () => {
     canonical: "https://emmonsair.com/review",
   });
 
-  const [step, setStep] = useState<"rating" | "form" | "redirect" | "thanks">("rating");
+  const [step, setStep] = useState<"rating" | "form" | "thanks">("rating");
   const [selectedRating, setSelectedRating] = useState(0);
+  const [showGoogleDialog, setShowGoogleDialog] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -43,7 +44,7 @@ const ReviewPage = () => {
   const handleRatingClick = (stars: number) => {
     setSelectedRating(stars);
     if (stars >= 4) {
-      setStep("redirect");
+      setShowGoogleDialog(true);
     } else {
       setStep("form");
     }
