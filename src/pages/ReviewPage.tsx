@@ -31,7 +31,7 @@ const ReviewPage = () => {
     canonical: "https://emmonsair.com/review",
   });
 
-  const [step, setStep] = useState<"rating" | "form" | "thanks">("rating");
+  const [step, setStep] = useState<"rating" | "form" | "redirect" | "thanks">("rating");
   const [selectedRating, setSelectedRating] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -43,7 +43,7 @@ const ReviewPage = () => {
   const handleRatingClick = (stars: number) => {
     setSelectedRating(stars);
     if (stars >= 4) {
-      window.location.href = GMB_LINK;
+      setStep("redirect");
     } else {
       setStep("form");
     }
@@ -121,6 +121,42 @@ const ReviewPage = () => {
                   </span>
                 </button>
               ))}
+            </div>
+          </div>
+
+          {/* Redirect to Google Step */}
+          <div
+            className={`transition-all duration-500 ${
+              step === "redirect"
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4 hidden"
+            }`}
+          >
+            <div className="text-center py-8">
+              <img src={icon} alt="Emmons Air" className="w-16 h-16 mx-auto mb-6" />
+              <h2 className="font-heading text-3xl font-bold text-foreground mb-3">
+                Thank you! 🎉
+              </h2>
+              <p className="text-muted-foreground text-lg mb-8 max-w-md mx-auto">
+                We're so glad you had a great experience! Would you mind leaving us a review on Google? It really helps!
+              </p>
+              <a
+                href={GMB_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <Button className="rounded-xl py-6 px-8 text-lg font-bold">
+                  Leave a Google Review
+                </Button>
+              </a>
+              <button
+                type="button"
+                onClick={() => setStep("rating")}
+                className="block w-full text-center text-sm text-muted-foreground hover:text-foreground transition-colors mt-4"
+              >
+                ← Back to ratings
+              </button>
             </div>
           </div>
 
