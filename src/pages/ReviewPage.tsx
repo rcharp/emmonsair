@@ -31,7 +31,7 @@ const ReviewPage = () => {
     canonical: "https://emmonsair.com/review",
   });
 
-  const [step, setStep] = useState<"rating" | "form" | "thanks">("rating");
+  const [step, setStep] = useState<"rating" | "form" | "redirect" | "thanks">("rating");
   const [selectedRating, setSelectedRating] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -43,7 +43,7 @@ const ReviewPage = () => {
   const handleRatingClick = (stars: number) => {
     setSelectedRating(stars);
     if (stars >= 4) {
-      window.location.href = GMB_LINK;
+      setStep("redirect");
     } else {
       setStep("form");
     }
