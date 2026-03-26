@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { Percent } from "lucide-react";
+import icon from "@/assets/icon.png";
 import useSEO from "@/hooks/useSEO";
 
 const WEBHOOK_URL =
@@ -26,15 +27,14 @@ const GetYourDiscountPage = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     phone: "",
-    helpWith: "",
-    consentMarketing: false,
-    consentNonMarketing: false,
+    summary: "",
+    consent: false,
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.fullName.trim() || !formData.phone.trim() || !formData.helpWith.trim()) {
+    if (!formData.fullName.trim() || !formData.phone.trim() || !formData.summary.trim()) {
       toast.error("Please fill in all required fields.");
       return;
     }
@@ -42,8 +42,8 @@ const GetYourDiscountPage = () => {
       toast.error("Please enter a valid 10-digit phone number.");
       return;
     }
-    if (!formData.consentMarketing || !formData.consentNonMarketing) {
-      toast.error("Please accept both consent checkboxes.");
+    if (!formData.consent) {
+      toast.error("Please accept the terms & conditions.");
       return;
     }
 
@@ -56,9 +56,8 @@ const GetYourDiscountPage = () => {
         body: JSON.stringify({
           full_name: formData.fullName.trim(),
           phone: formData.phone.trim(),
-          help_with: formData.helpWith.trim(),
-          consent_marketing: formData.consentMarketing,
-          consent_non_marketing: formData.consentNonMarketing,
+          summary: formData.summary.trim(),
+          consent: formData.consent,
         }),
       });
 
@@ -90,16 +89,16 @@ const GetYourDiscountPage = () => {
               onSubmit={handleSubmit}
               className="rounded-2xl border-2 border-secondary bg-primary p-8 space-y-6 shadow-2xl"
             >
-              <div className="text-center space-y-3 pb-2">
-                <Percent className="w-14 h-14 text-accent mx-auto" />
+              {/* Header */}
+              <div className="text-center space-y-2 pb-2">
+                <img src={icon} alt="Emmons Air" className="w-16 h-16 mx-auto" />
                 <h1 className="font-heading font-bold text-primary-foreground text-2xl">
-                  Get Your Discount
+                  Emmons Air
                 </h1>
-                <p className="text-primary-foreground/70 text-sm">
-                  Fill out the form below and we'll send you an exclusive offer!
-                </p>
+                <p className="text-secondary font-semibold text-lg">Get Your Discount!</p>
               </div>
 
+              {/* Full Name */}
               <div className="space-y-2">
                 <Label htmlFor="fullName" className="text-primary-foreground font-semibold">
                   Full Name <span className="text-secondary">*</span>
@@ -115,6 +114,7 @@ const GetYourDiscountPage = () => {
                 />
               </div>
 
+              {/* Phone */}
               <div className="space-y-2">
                 <Label htmlFor="phone" className="text-primary-foreground font-semibold">
                   Phone <span className="text-secondary">*</span>
@@ -134,71 +134,50 @@ const GetYourDiscountPage = () => {
                 />
               </div>
 
+              {/* Summary */}
               <div className="space-y-2">
-                <Label htmlFor="helpWith" className="text-primary-foreground font-semibold">
-                  What do you need help with? <span className="text-secondary">*</span>
+                <Label htmlFor="summary" className="text-primary-foreground font-semibold">
+                  Short summary of the work you need! <span className="text-secondary">*</span>
                 </Label>
                 <Textarea
-                  id="helpWith"
-                  placeholder="Tell us about your HVAC needs and we'll find the best discount for you!"
+                  id="summary"
+                  placeholder="Your message goes straight to my phone, I'll get back to you as soon as I'm available"
                   required
                   maxLength={1000}
                   rows={4}
-                  value={formData.helpWith}
-                  onChange={(e) => setFormData({ ...formData, helpWith: e.target.value })}
+                  value={formData.summary}
+                  onChange={(e) => setFormData({ ...formData, summary: e.target.value })}
                   className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 resize-none"
                 />
               </div>
 
+              {/* Single Consent */}
               <div className="flex items-start gap-3">
                 <Checkbox
-                  id="consentMarketing"
-                  checked={formData.consentMarketing}
+                  id="consent"
+                  checked={formData.consent}
                   onCheckedChange={(checked) =>
-                    setFormData({ ...formData, consentMarketing: checked === true })
+                    setFormData({ ...formData, consent: checked === true })
                   }
                   className="mt-1 border-primary-foreground/30 data-[state=checked]:bg-secondary data-[state=checked]:border-secondary"
                 />
                 <Label
-                  htmlFor="consentMarketing"
+                  htmlFor="consent"
                   className="text-primary-foreground/70 text-xs leading-relaxed font-normal cursor-pointer"
                 >
-                  I consent to receive marketing text messages from Emmons Air LLC at the
-                  phone number provided. Consent is not a condition of purchase. Message
-                  frequency may vary. Message &amp; data rates may apply. Text HELP for
-                  assistance, reply STOP to opt out.
-                </Label>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <Checkbox
-                  id="consentNonMarketing"
-                  checked={formData.consentNonMarketing}
-                  onCheckedChange={(checked) =>
-                    setFormData({ ...formData, consentNonMarketing: checked === true })
-                  }
-                  className="mt-1 border-primary-foreground/30 data-[state=checked]:bg-secondary data-[state=checked]:border-secondary"
-                />
-                <Label
-                  htmlFor="consentNonMarketing"
-                  className="text-primary-foreground/70 text-xs leading-relaxed font-normal cursor-pointer"
-                >
-                  I consent to receive non-marketing text messages from Emmons Air LLC
-                  regarding appointment confirmations and reminders, customer support
-                  updates, and service-related follow-ups at the phone number provided.
-                  Consent is not a condition of purchase. Message frequency may vary.
-                  Message &amp; data rates may apply. Text HELP for assistance, reply STOP
-                  to opt out.
+                  I agree to the terms &amp; conditions provided by the company. By providing my
+                  phone number, I agree to receive text messages from the business.
                 </Label>
               </div>
 
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full font-bold text-lg py-6 bg-accent text-accent-foreground hover:bg-accent/90 transition-opacity"
+                className="w-full font-bold text-lg py-6 bg-accent text-accent-foreground hover:bg-accent/90 transition-opacity uppercase tracking-wide"
                 style={{ borderRadius: "10px" }}
               >
-                {isSubmitting ? "Sending..." : "Claim My Discount"}
+                <Percent className="w-5 h-5 mr-1" />
+                {isSubmitting ? "Sending..." : "GET MY DISCOUNT"}
               </Button>
             </form>
           )}
