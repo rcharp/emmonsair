@@ -22,6 +22,7 @@ import ContactPage from "./pages/ContactPage";
 import QuotePage from "./pages/QuotePage";
 import HVACTipsPage from "./pages/HVACTipsPage";
 import TipDetailPage from "./pages/TipDetailPage";
+import GetYourDiscountPage from "./pages/GetYourDiscountPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -74,6 +75,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/quote" element={<QuotePage />} />
+            <Route path="/get-your-discount" element={<GetYourDiscountPage />} />
 
             <Route path="/review" element={<ReviewPage />} />
             <Route path="/services/ac-repair" element={<ACRepairPage />} />
