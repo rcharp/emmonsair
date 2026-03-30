@@ -12,7 +12,7 @@ import icon from "@/assets/icon.png";
 import useSEO from "@/hooks/useSEO";
 
 const WEBHOOK_URL =
-  "https://services.leadconnectorhq.com/hooks/7IdpxAjxnevjhuMotlbS/webhook-trigger/d7a3c6e2-130d-4560-811a-b910c34eb037";
+  "https://services.leadconnectorhq.com/hooks/2lL8X11FphSXVtGR5v9a/webhook-trigger/eb635e92-198e-49ba-a6fa-0e62354148ab";
 
 const GetYourDiscountPage = () => {
   useSEO({
