@@ -43,11 +43,7 @@ const ReviewPage = () => {
 
   const handleRatingClick = (stars: number) => {
     setSelectedRating(stars);
-    if (stars >= 4) {
-      setShowGoogleDialog(true);
-    } else {
-      setStep("form");
-    }
+    setShowGoogleDialog(true);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
